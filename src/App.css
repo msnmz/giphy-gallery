@@ -4,18 +4,18 @@
 
 @media all and (max-width: 600px) {
   .App {
-    padding: 0 20px;
+    padding: 20px;
   }
 }
 
 @media all and (min-width: 600px) and (max-width: 1200px) {
   .App {
-    padding: 0 80px;
+    padding: 20px 80px;
   }
 }
 
 @media all and (min-width: 1200px) {
   .App {
-    padding: 0 5%;
+    padding: 20px 5%;
   }
 }
