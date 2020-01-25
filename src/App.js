@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      <SearchBar onSearch={handleSearchClick} />
+      <SearchBar onSearch={handleSearchClick} disabled={loading} />
       {images.length > 0 && <ImageList images={images} />}
       {loading && <Loading />}
       {error && <ErrorView message={error} />}

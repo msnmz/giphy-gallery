@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SearchBar.css';
 
-export default function SearchBar({ onSearch }) {
+export default function SearchBar({ onSearch, disabled }) {
   const [searchText, setSearchText] = useState('');
 
   function handleSearchInputChange(event) {
@@ -11,7 +11,7 @@ export default function SearchBar({ onSearch }) {
   return (
     <>
       <input type='text' className='search-input' value={searchText} onChange={handleSearchInputChange} />
-      <button className='search-button' onClick={() => onSearch(searchText)}>Search</button>
+      <button disabled={disabled} className='search-button' onClick={() => onSearch(searchText)}>Search</button>
     </>
   )
 }
