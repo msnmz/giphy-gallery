@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Image({ source, title }) {
+export default function ImageView({ source, title }) {
   return (
     <div>
       <img src={source} alt={title} />
