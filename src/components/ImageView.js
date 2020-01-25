@@ -1,10 +1,11 @@
 import React from 'react';
+import './ImageView.css';
 
 export default function ImageView({ source, title }) {
   return (
-    <div>
+    <div className='image-container'>
       <img src={source} alt={title} />
-      <p>title</p>
+      <p className='image-title'>{title}</p>
     </div>
   );
 }
