@@ -1,0 +1,12 @@
+.search-input {
+  border-radius: 5px;
+  margin: auto;
+}
+
+.search-button {
+  background-color: transparent;
+  color: dimgrey;
+  border: 1px solid dimgrey;
+  border-radius: 5px;
+  margin-left: 10px;
+}
