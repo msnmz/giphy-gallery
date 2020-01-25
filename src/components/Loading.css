@@ -1,0 +1,8 @@
+.loading-spinner {
+  text-align: center;
+  height: 50px;
+}
+
+.loading-spinner img {
+  height: 100%;
+}
