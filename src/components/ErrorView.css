@@ -1,0 +1,6 @@
+.error-message {
+  padding: 10px;
+  border: 1px solid red;
+  border-radius: 5px;
+  color: brown;
+}
