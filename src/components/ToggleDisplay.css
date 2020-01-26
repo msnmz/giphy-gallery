@@ -1,0 +1,26 @@
+.toggle-button {
+  flex-basis: 49%;
+}
+
+.divider {
+  flex-basis: 1%;
+  background-color: gray;
+}
+
+.toggle-container {
+  width: 400px;
+  display: flex;
+  border: 1px solid gray;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.active {
+  background-color: white;
+  color: blue;
+}
+
+.passive {
+  background-color: lightgray;
+  color: cadetblue;
+}
