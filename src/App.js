@@ -17,13 +17,18 @@ function App() {
   const [query, setQuery] = useState('');
   const [oneColumnDisplay, setOneColumnDisplay] = useState(true);
 
-  async function handleSearch(searchText) {
+  async function handleSearch(searchText, isNewSearch) {
     try {
       setLoading(true);
       setQuery(searchText);
       const newImages = await getImages(searchText, imagesOffset);
       setImagesOffset(prevValue => prevValue + limitPerRequest);
-      setImages(prevValue => [...prevValue, ...newImages.data]); // Will add the new ones to the end of the list
+      /**
+       * New search is made when user clicks the search button,
+       * so we need to reset the images we are displaying,
+       * but when the user scrolls to the bottom, we are just adding new results to the end of the list.
+       */
+      setImages(prevValue => isNewSearch ? newImages.data : [...prevValue, ...newImages.data]);
       setError('');
     } catch (error) {
       setError(error.message);
@@ -40,13 +45,13 @@ function App() {
         So, we need to ensure it first.
       */
       setLoading(true);
-      handleSearch(query);
+      handleSearch(query, false);
     }
   };
 
   return (
     <div className="App">
-      <SearchBar onSearch={handleSearch} disabled={loading} />
+      <SearchBar onSearch={searchText => handleSearch(searchText, true)} disabled={loading} />
       {images.length > 0 &&
         <>
           <ToggleDisplay onToggle={setOneColumnDisplay} />
