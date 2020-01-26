@@ -10,7 +10,7 @@ export default function SearchBar({ onSearch, disabled }) {
 
   return (
     <>
-      <input type='text' className='search-input' value={searchText} onChange={handleSearchInputChange} />
+      <input type='text' className='search-input' value={searchText} onChange={handleSearchInputChange} placeholder='Search keywords...' />
       <button disabled={disabled} className='search-button' onClick={() => onSearch(searchText)}>Search</button>
     </>
   )
