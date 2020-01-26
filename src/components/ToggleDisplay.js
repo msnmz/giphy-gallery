@@ -11,9 +11,8 @@ export default function ToggleDisplay({ onToggle }) {
 
   return (
     <div className='toggle-container'>
-      <button onClick={() => handleToggle(true)} className={'toggle-button ' + oneColumn ? 'active' : 'passive'}>1-Column Display</button>
-      <div className='divider'></div>
-      <button onClick={() => handleToggle(false)} className={'toggle-button ' + oneColumn ? 'passive' : 'active'}>3-Column Display</button>
+      <button onClick={() => handleToggle(true)} className={`toggle-button ${oneColumn ? 'active' : 'passive'}`}>1-Column Display</button>
+      <button onClick={() => handleToggle(false)} className={`toggle-button ${oneColumn ? 'passive' : 'active'}`}>3-Column Display</button>
     </div>
   )
 } 

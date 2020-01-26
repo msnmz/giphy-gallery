@@ -7,6 +7,7 @@ import SearchBar from "./components/SearchBar";
 import Loading from './components/Loading';
 import ImageList from './components/ImageList';
 import ErrorView from './components/ErrorView';
+import ToggleDisplay from './components/ToggleDisplay';
 
 function App() {
   const [imagesOffset, setImagesOffset] = useState(0); // Will provide to API to get new images rather than same ones
@@ -14,6 +15,7 @@ function App() {
   const [loading, setLoading] = useState(false); // Feedback while user waits for the new images
   const [error, setError] = useState(''); // Will contain error message if there is one.
   const [query, setQuery] = useState('');
+  const [oneColumnDisplay, setOneColumnDisplay] = useState(true);
 
   async function handleSearch(searchText) {
     try {
@@ -45,7 +47,12 @@ function App() {
   return (
     <div className="App">
       <SearchBar onSearch={handleSearch} disabled={loading} />
-      {images.length > 0 && <ImageList images={images} />}
+      {images.length > 0 &&
+        <>
+          <ToggleDisplay onToggle={setOneColumnDisplay} />
+          <ImageList images={images} oneColumn={oneColumnDisplay} />
+        </>
+      }
       {loading && <Loading />}
       {error && <ErrorView message={error} />}
     </div>

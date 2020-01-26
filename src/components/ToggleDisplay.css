@@ -1,10 +1,8 @@
 .toggle-button {
-  flex-basis: 49%;
-}
-
-.divider {
-  flex-basis: 1%;
-  background-color: gray;
+  flex-basis: 50%;
+  margin: 0;
+  border: none;
+  border-radius: 0;
 }
 
 .toggle-container {
@@ -13,14 +11,16 @@
   border: 1px solid gray;
   border-radius: 5px;
   overflow: hidden;
+  padding: 0;
+  margin: 20px auto;
 }
 
-.active {
+.passive {
   background-color: white;
   color: blue;
 }
 
-.passive {
+.active {
   background-color: lightgray;
   color: cadetblue;
 }
